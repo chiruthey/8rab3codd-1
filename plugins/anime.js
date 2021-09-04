@@ -97,7 +97,7 @@ else if (Config.WORKTYPE == 'public') {
     
     Asena.addCommand({ pattern: 'hentai ?(.*)', fromMe: false, onlyPm: true,dontaddCommandList: true }, (async (message, match) => {
       
-        var ttinullimage = await axios.get(`https://${Config.HLOCK}.herokuapp.herokuapp.com/api/hentai`, { responseType: 'arraybuffer' })
+        var ttinullimage = await axios.get(`https://${Config.HLOCK}.herokuapp.com/api/hentai`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
     

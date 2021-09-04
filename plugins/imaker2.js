@@ -24,7 +24,7 @@ if (Config.WORKTYPE == 'public') {
 
     if (match[1] === '') return await message.sendMessage(need);
 
-    var ttinullimage = await axios.get(`https://hadi-api.herokuapp.com/api/photoxy/battlefield-4-rising?text=${match[1]}&apikey=${Config.ZTH}`, { responseType: 'arraybuffer' })
+    var ttinullimage = await axios.get(`https://hadi-api.herokuapp.com/api/photoxy/battlefield-4-rising?text=${match[1]}`, { responseType: 'arraybuffer' })
 
    await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
 
@@ -120,7 +120,7 @@ Asena.addCommand({pattern: 'battle ?(.*)', fromMe: false, dontAddCommandList: tr
 
     if (match[1] === '') return await message.sendMessage(need);
 
-    var ttinullimage = await axios.get(`https://hadi-api.herokuapp.com/api/photoxy/battlefield-4-rising?text=${match[1]}&apikey=${Config.ZTH}`, { responseType: 'arraybuffer' })
+    var ttinullimage = await axios.get(`https://hadi-api.herokuapp.com/api/photoxy/battlefield-4-rising?text=${match[1]}`, { responseType: 'arraybuffer' })
 
    await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
 

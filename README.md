@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/phaticusthiccy/WhatsAsenaDuplicated/fork">
-    <img src="https://img.shields.io/github/forks/phaticusthiccy/WhatsAsenaDuplicated?label=Fork&style=social">
+  <a href="https://github.com/chiruthey/AlphaV2/fork">
+    <img src="https://img.shields.io/github/forks/chiruthey/AlphaV2?label=Fork&style=social">
     
   </a>
   <a href="https://github.com/phaticusthiccy/WhatsAsenaDuplicated/stargazers">

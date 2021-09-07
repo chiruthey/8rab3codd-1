@@ -51,13 +51,13 @@ else if (Config.WORKTYPE == 'public') {
         if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text);
         //var downloading = await message.client.sendMessage(message.jid,Lang.DOWNLOADING,MessageType.text);
         var location = await message.client.downloadAndSaveMediaMessage({
-/*          key: {
+        key: {
                 remoteJid: message.reply_message.jid,
                 id: message.reply_message.id
             },
             message: message.reply_message.data.quotedMessage
         });
-*/
+
         if (message.reply_message.video === false && message.reply_message.image) {
             ffmpeg(location)
                 .outputOptions(["-y", "-vcodec libwebp"])

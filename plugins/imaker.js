@@ -2,7 +2,7 @@ const Asena = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
-const IMAKER = "\n*~* ```IMAGE 🌈 MAKER``` *~*\n\n\n┎🍇 ```.barcode```\n┃\n┝🍇 ```.qr```\n┃\n┝🍇 ```.naruto```\n┃\n┝🍇 ```.bneon```\n┃\n┝🍇 ```.matrix```\n┃\n┝🍇 ```.breakwall```\n┃\n┝🍇 ```.blood```\n┃\n┝🍇 ```.metal```\n┃\n┝🍇 ```.uwo```\n┃\n┝🍇 ```.gneon```\n┃\n┝🍇 ```.harrypotter```\n┃\n┝🍇 ```.retrolol```\n┃\n┝🍇 ```.shadow```\n┃\n┝🍇 ```.romantic```\n┃\n┝🍇 ```.butterfly```\n┃\n┝🍇 ```.coffecup```\n┃\n┝🍇 ```.nlight```\n┃\n┝🍇 ```.rainbow```\n┃\n┝🍇 ```.camo```\n┃\n┝🍇 ```.vintage```\n┃\n┝🍇 ```.candy```\n┃\n┝🍇 ```.gradient```\n┃\n┝🍇 ```.stars```\n┃\n┝🍇 ```.fur```\n┃\n┝🍇 ```.dropwater```\n┃\n┝🍇 ```.crossfire```\n┃\n┝🍇 ```.silk```\n┃\n┝🍇 ```.flame```\n┃\n┝🍇 ```.glow```\n┃\n┝🍇 ```.smoke```\n┃\n┝🍇 ```.sky```\n┃\n┝🍇 ```.cs```\n┃\n┝🍇 ```.lightwriting```\n┃\n┝🍇 ```.crismes```\n┃\n┝🍇 ```.firework```\n┃\n┝🍇 ```.sandw```\n┃\n┝🍇 ```.freefire```\n┃\n┝🍇 ```.gplay```\n┃\n┝🍇 ```.splay```\n┃\n┝🍇 ```.box3d```\n┃\n┝🍇 ```.3d```\n┃\n┝🍇 ```.blackpink```\n┃\n┝🍇 ```.thunder```\n┃\n┝🍇 ```.leave```\n┃\n┝🍇 ```.tlight```\n┃\n┝🍇 ```.book```\n┃\n┝🍇 ```.gaming```\n┃\n┝🍇 ```.wolf```\n┃\n┝🍇 ```.pubg```\n┃\n┝🍇 ```.snow```\n┃\n┝🍇 ```.wc```\n┃\n┝🍇 ```.avengers```\n┃\n┝🍇 ```.ph```\n┃\n┝🍇 ```.marvel```\n┃\n┗🍇 ```.glitch```\n\n"
+const IMAKER = "\n*~* ```IMAGE 🌈 MAKER``` *~*\n\n\n┎🍇 ```.barcode```\n┃\n┝🍇 ```.devil```\n┃\n┝🍇 ```.futuristic```\n┃\n┝🍇 ```.underwater```\n┃\n┝🍇 ```.qr```\n┃\n┝🍇 ```.naruto```\n┃\n┝🍇 ```.bneon```\n┃\n┝🍇 ```.matrix```\n┃\n┝🍇 ```.breakwall```\n┃\n┝🍇 ```.blood```\n┃\n┝🍇 ```.metal```\n┃\n┝🍇 ```.uwo```\n┃\n┝🍇 ```.gneon```\n┃\n┝🍇 ```.harrypotter```\n┃\n┝🍇 ```.retrolol```\n┃\n┝🍇 ```.shadow```\n┃\n┝🍇 ```.romantic```\n┃\n┝🍇 ```.butterfly```\n┃\n┝🍇 ```.coffecup```\n┃\n┝🍇 ```.nlight```\n┃\n┝🍇 ```.rainbow```\n┃\n┝🍇 ```.camo```\n┃\n┝🍇 ```.vintage```\n┃\n┝🍇 ```.candy```\n┃\n┝🍇 ```.gradient```\n┃\n┝🍇 ```.stars```\n┃\n┝🍇 ```.fur```\n┃\n┝🍇 ```.dropwater```\n┃\n┝🍇 ```.crossfire```\n┃\n┝🍇 ```.silk```\n┃\n┝🍇 ```.flame```\n┃\n┝🍇 ```.glow```\n┃\n┝🍇 ```.smoke```\n┃\n┝🍇 ```.sky```\n┃\n┝🍇 ```.cs```\n┃\n┝🍇 ```.lightwriting```\n┃\n┝🍇 ```.crismes```\n┃\n┝🍇 ```.firework```\n┃\n┝🍇 ```.sandw```\n┃\n┝🍇 ```.freefire```\n┃\n┝🍇 ```.gplay```\n┃\n┝🍇 ```.splay```\n┃\n┝🍇 ```.box3d```\n┃\n┝🍇 ```.3d```\n┃\n┝🍇 ```.blackpink```\n┃\n┝🍇 ```.thunder```\n┃\n┝🍇 ```.leave```\n┃\n┝🍇 ```.tlight```\n┃\n┝🍇 ```.book```\n┃\n┝🍇 ```.gaming```\n┃\n┝🍇 ```.wolf```\n┃\n┝🍇 ```.pubg```\n┃\n┝🍇 ```.snow```\n┃\n┝🍇 ```.wc```\n┃\n┝🍇 ```.avengers```\n┃\n┝🍇 ```.ph```\n┃\n┝🍇 ```.marvel```\n┃\n┗🍇 ```.glitch```\n\n"
 const Config = require('../config');
 const Ln = "Image Maker"
 const need = "```YOU MUST ENTER WORDS!```"
@@ -20,6 +20,41 @@ Asena.addCommand({pattern: 'blood ?(.*)', fromMe: false, dontAddCommandList: tru
     await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
 
     }));
+    
+    
+ Asena.addCommand({pattern: 'devil ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+
+    if (match[1] === '') return await message.sendMessage(need);
+
+    var ttinullimage = await axios.get(`https://hadi-api.herokuapp.com/api/textpro/neon-devil-wings?text=${match[1]}`, { responseType: 'arraybuffer' })
+
+    await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
+
+    }));   
+    
+    
+ Asena.addCommand({pattern: 'futuristic ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+
+    if (match[1] === '') return await message.sendMessage(need);
+
+    var ttinullimage = await axios.get(`https://hadi-api.herokuapp.com/api/textpro/futuristic-technology?text=${match[1]}`, { responseType: 'arraybuffer' })
+
+    await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
+
+    }));   
+    
+    
+    
+Asena.addCommand({pattern: 'underwater ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+
+    if (match[1] === '') return await message.sendMessage(need);
+
+    var ttinullimage = await axios.get(`https://hadi-api.herokuapp.com/api/textpro/3d-underwater-text?text=${match[1]}`, { responseType: 'arraybuffer' })
+
+    await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
+
+    })); 
+    
     
 Asena.addCommand({pattern: 'metal ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
@@ -563,7 +598,7 @@ Asena.addCommand({pattern: 'glitch ?(.*)', fromMe: false, dontAddCommandList: tr
 
     }));
 
-    Asena.addCommand({ pattern: 'imaker ?(.*)', fromMe: false, deleteCommand: false, desc: Ln,}, (async (message, match) => {await message.client.sendMessage(message.jid,IMAKER, MessageType.text);
+    Asena.addCommand({ pattern: 'imaker ?(.*)', fromMe: false, deleteCommand: false, desc: '```Logo Maker.```' ,}, (async (message, match) => {await message.client.sendMessage(message.jid,IMAKER, MessageType.text);
 
     }));
 

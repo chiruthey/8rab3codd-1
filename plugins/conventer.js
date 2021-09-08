@@ -80,7 +80,8 @@ if (Config.WORKTYPE == 'private') {
         ffmpeg(location)
             .save('output.mp3')
             .on('end', async () => {
-                await message.client.sendMessage(mid, fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: false});
+                await message.client.sendMessage(mid, fs.readFileSync('output.mp3'), MessageType.document, {filename: 'alpha.mp3', mimetype: 'audio/mpeg', quoted: message.data});
+});
             });
         return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
@@ -145,7 +146,7 @@ else if (Config.WORKTYPE == 'public') {
         ffmpeg(location)    
             .save('output.mp3')
             .on('end', async () => {
-                await message.client.sendMessage(mid, fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, quoted: message.data, ptt: false});
+                await message.client.sendMessage(mid, fs.readFileSync('output.mp3'), MessageType.document, {filename: 'alpha.mp3', mimetype: 'audio/mpeg', quoted: message.data});
             });
         return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));

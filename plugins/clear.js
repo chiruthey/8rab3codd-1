@@ -21,7 +21,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     return sonuc.includes(true);
 }
 
-Asena.addCommand({pattern: 'clr', fromMe: true, desc: END, dontAddCommandList: true}, (async (message, match) => {
+Asena.addCommand({pattern: 'clr', fromMe: true, desc: '*Clears chat 💬*'}, (async (message, match) => {
 
     //await message.sendMessage('```clearing chat..```');
     await message.client.modifyChat (message.jid, ChatModification.delete);

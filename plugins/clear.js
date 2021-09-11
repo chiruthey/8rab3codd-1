@@ -23,7 +23,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
 
 Asena.addCommand({pattern: 'clr', fromMe: true, desc: END, dontAddCommandList: true}, (async (message, match) => {
 
-    await message.sendMessage('```clearing chat..```');
+    //await message.sendMessage('```clearing chat..```');
     await message.client.modifyChat (message.jid, ChatModification.delete);
-    await message.sendMessage('```💬 cleared 😇```');
+    await message.sendMessage('```Done ✓```');
 }));

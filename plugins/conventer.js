@@ -68,7 +68,7 @@ if (Config.WORKTYPE == 'private') {
     Asena.addCommand({pattern: 'mp3$', fromMe: true, desc: Lang.MP4TOAUDİO_DESC}, (async (message, match) => {    
         const mid = message.jid
         if (message.reply_message === false) return await message.client.sendMessage(mid, Lang.MP4TOAUDİO_NEEDREPLY, MessageType.text);
-        var downloading = await message.client.sendMessage(mid,Lang.MP4TOAUDİO,MessageType.text);
+     // let downloading = await message.client.sendMessage(mid,Lang.MP4TOAUDİO,MessageType.text);
         var location = await message.client.downloadAndSaveMediaMessage({
             key: {
                 remoteJid: message.reply_message.jid,
@@ -82,13 +82,13 @@ if (Config.WORKTYPE == 'private') {
             .on('end', async () => {
                 await message.client.sendMessage(mid, fs.readFileSync('output.mp3'), MessageType.document, {filename: 'alpha.mp3', mimetype: 'audio/mpeg', quoted: message.data});
             });
-        return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
+        //return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
 
-    Asena.addCommand({pattern: 'jpg$', fromMe: true, desc: Lang.STİCKER_DESC}, (async (message, match) => {   
+    Asena.addCommand({pattern: 'photo$', fromMe: true, desc: Lang.STİCKER_DESC}, (async (message, match) => {   
         const mid = message.jid
         if (message.reply_message === false) return await message.client.sendMessage(mid, Lang.STİCKER_NEEDREPLY, MessageType.text);
-        var downloading = await message.client.sendMessage(mid,Lang.STİCKER,MessageType.text);
+        //var downloading = await message.client.sendMessage(mid,Lang.STİCKER,MessageType.text);
         var location = await message.client.downloadAndSaveMediaMessage({
             key: {
                 remoteJid: message.reply_message.jid,
@@ -103,7 +103,7 @@ if (Config.WORKTYPE == 'private') {
             .on('end', async () => {
                 await message.client.sendMessage(mid, fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg, quoted: message.data });
             });
-        return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
+        //return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
     Asena.addCommand({pattern: 'vsticker$', desc: Lang.ANİM_STİCK, fromMe: true}, (async (message, match) => {
         const mid = message.jid
@@ -133,7 +133,7 @@ else if (Config.WORKTYPE == 'public') {
     Asena.addCommand({pattern: 'mp3$', fromMe: false, desc: Lang.MP4TOAUDİO_DESC}, (async (message, match) => {    
         const mid = message.jid
         if (message.reply_message === false) return await message.client.sendMessage(mid, Lang.MP4TOAUDİO_NEEDREPLY, MessageType.text);
-        var downloading = await message.client.sendMessage(mid,Lang.MP4TOAUDİO,MessageType.text);
+        //var downloading = await message.client.sendMessage(mid,Lang.MP4TOAUDİO,MessageType.text);
         var location = await message.client.downloadAndSaveMediaMessage({
             key: {
                 remoteJid: message.reply_message.jid,
@@ -147,13 +147,13 @@ else if (Config.WORKTYPE == 'public') {
             .on('end', async () => {
                 await message.client.sendMessage(mid, fs.readFileSync('output.mp3'), MessageType.document, {filename: 'alpha.mp3', mimetype: 'audio/mpeg', quoted: message.data});
             });
-        return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
+        //return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
 
-    Asena.addCommand({pattern: 'jpg$', fromMe: false, desc: Lang.STİCKER_DESC}, (async (message, match) => {    
+    Asena.addCommand({pattern: 'photo$', fromMe: false, desc: Lang.STİCKER_DESC}, (async (message, match) => {    
         const mid = message.jid
         if (message.reply_message === false) return await message.client.sendMessage(mid, Lang.STİCKER_NEEDREPLY, MessageType.text);
-        var downloading = await message.client.sendMessage(mid,Lang.STİCKER,MessageType.text);
+        //var downloading = await message.client.sendMessage(mid,Lang.STİCKER,MessageType.text);
         var location = await message.client.downloadAndSaveMediaMessage({
             key: {
                 remoteJid: message.reply_message.jid,
@@ -168,7 +168,7 @@ else if (Config.WORKTYPE == 'public') {
             .on('end', async () => {
                 await message.client.sendMessage(mid, fs.readFileSync('output.jpg'), MessageType.image, {mimetype: Mimetype.jpg,thumbnail: "https://telegra.ph/file/a85a4f4e1c06196f702db.jpg"});
             });
-        return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
+        //return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
     Asena.addCommand({pattern: 'vsticker$', desc: Lang.ANİM_STİCK, fromMe: false}, (async (message, match) => {
         const mid = message.jid

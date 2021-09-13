@@ -547,7 +547,7 @@ Asena.addCommand({pattern: 'avengers ?(.*)', fromMe: false, dontAddCommandList: 
 
     }));
 
-\*Asena.addCommand({pattern: 'ph ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+/*Asena.addCommand({pattern: 'ph ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(need);
   
@@ -563,7 +563,7 @@ Asena.addCommand({pattern: 'avengers ?(.*)', fromMe: false, dontAddCommandList: 
    await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, {mimetype: Mimetype.jpg , caption: Config.CAPTION_KEY})
 
     }));
-*\
+*/
 Asena.addCommand({pattern: 'marvel ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(need);

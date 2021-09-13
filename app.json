@@ -36,8 +36,8 @@
             "required": true,
             "value": "^[.!;]"
         },
-        "FULL_EVA": {
-            "description": "Hesabınızı bir Chatbot'a Çevirin! Turn your account into a chatbot!",
+        "TALKING_PINKY": {
+            "description": "Turn your account into a chatbot!",
             "required": true,
             "value": "false"
         },

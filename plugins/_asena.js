@@ -118,7 +118,7 @@ else if (Config.WORKTYPE == 'public') {
             );
             let pp
             try { pp = await message.client.getProfilePicture(message.jid.includes('-') ? message.data.participant : message.jid ); } catch { pp = await message.client.getProfilePicture(); }
-            await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.sendMessage(message.jid, res.data, MessageType.image, { caption: '●═══════' + Config.MENUTEXT + '═══════●\n\n' + CMD_HELP }); });  
+            await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.sendMessage(message.jid, res.data, MessageType.image, { caption: '●════' + Config.MENUTEXT + '════●\n\n' + CMD_HELP }); });  
         } else {
 
             if (message.jid === '393475528094-1415817281@g.us') {

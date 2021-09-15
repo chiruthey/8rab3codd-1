@@ -42,6 +42,22 @@ if (Config.WORKTYPE == 'private') {
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
     
     }));
+    
+    Asena.addCommand({ pattern: 'hentai ?(.*)', fromMe: true, onlyPm: true,dontaddCommandList: true }, (async (message, match) => {
+      
+        var ttinullimage = await axios.get(`https://${Config.HLOCK}.herokuapp.com/api/hentai`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
+    
+    }));
+    
+    Asena.addCommand({ pattern: 'yuri ?(.*)', fromMe: true, onlyPm: true,dontaddCommandList: true }, (async (message, match) => {
+      
+        var ttinullimage = await axios.get(`https://${Config.HLOCK}.herokuapp.com/api/yuri`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: Config.CAPTION_KEY})
+    
+    }));
 
     Asena.addCommand({ pattern: 'megumin ?(.*)', fromMe: true,dontaddCommandList: true }, (async (message, match) => {
         

@@ -4,6 +4,7 @@ const got = require('got');
 
 const Language = require('../language');
 const Lang = Language.getString('weather');
+const Config = require('../config');
 
 if (Config.WORKTYPE == 'private') {
     

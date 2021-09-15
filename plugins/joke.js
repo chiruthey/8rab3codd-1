@@ -18,8 +18,9 @@ Asena.addCommand({pattern: 'joke ?(.*)', fromMe: true, desc: Lang.JOKE_DESC}, as
 		'*😆' + Lang.PUNCHLINE +'* ```' + json.punchline+ '```\n', MessageType.text);
 	} catch {
 		return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
-	}
-}});
+    }
+});
+}
 	
 else if (Config.WORKTYPE == 'public') {
 	
@@ -34,4 +35,5 @@ else if (Config.WORKTYPE == 'public') {
 	} catch {
 		return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
 	}
-}});
+});
+}

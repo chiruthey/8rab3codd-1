@@ -17,6 +17,8 @@ const Axios = require('axios');
 const Language = require('../language');
 const Lang = Language.getString('conventer');
 
+let need = 'Type a name for the file';
+
 function webp2mp4File(path) {
     return new Promise(async (resolve, reject) => {
         const bodyForm = new FormData()
@@ -131,9 +133,10 @@ if (Config.WORKTYPE == 'private') {
 }
 else if (Config.WORKTYPE == 'public') {
 
-    Asena.addCommand({pattern: 'mp3$', fromMe: false, desc: Lang.MP4TOAUDİO_DESC}, (async (message, match) => {    
+    Asena.addCommand({pattern: 'mp3$', fromMe: false, desc: Lang.MP4TOAUDİO_DESC}, (async (message, match) => {   
+        if (match[1] ==="") return await message.sendMessage(need); 
         const mid = message.jid
-        if (message.reply_message === false) return await message.client.sendMessage(mid, Lang.MP4TOAUDİO_NEEDREPLY, MessageType.text);
+        //if (message.reply_message === false) return await message.client.sendMessage(mid, Lang.MP4TOAUDİO_NEEDREPLY, MessageType.text);
         //var downloading = await message.client.sendMessage(mid,Lang.MP4TOAUDİO,MessageType.text);
         var location = await message.client.downloadAndSaveMediaMessage({
             key: {
@@ -146,7 +149,7 @@ else if (Config.WORKTYPE == 'public') {
         ffmpeg(location)    
             .save('output.mp3')
             .on('end', async () => {
-                await message.client.sendMessage(mid, fs.readFileSync('output.mp3'), MessageType.document, {filename: 'alpha.mp3', mimetype: 'audio/mpeg', quoted: message.data});
+                await message.client.sendMessage(mid, fs.readFileSync('output.mp3'), MessageType.document, {filename: match[1] + '.mp3', mimetype: 'audio/mpeg', quoted: message.data});
             });
         //return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));

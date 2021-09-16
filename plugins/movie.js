@@ -30,8 +30,8 @@ Asena.addCommand({ pattern: 'movie ?(.*)', fromMe: true, desc: "Shows movie info
 	msg += 'imdbRating : ' + json.imdbRating + '\n\n';
 	msg += 'imdbVotes  : ' + json.imdbVotes + '```';
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
-}
 }));
+}
 	
 else if (Config.WORKTYPE == 'public') {
 	
@@ -60,6 +60,6 @@ else if (Config.WORKTYPE == 'public') {
 	msg += 'imdbRating : ' + json.imdbRating + '\n\n';
 	msg += 'imdbVotes  : ' + json.imdbVotes + '```';
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
-}
 }));
+}
 	

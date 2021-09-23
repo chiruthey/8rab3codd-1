@@ -41,6 +41,6 @@ Asena.addCommand({pattern: 'sticker$', fromMe: wk, desc: Lang.STICKER_DESC}, (as
             .on('end', async () => {
                 await message.sendMessage(fs.readFileSync('sticker.webp'), MessageType.sticker);
             });
-        return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
+        //return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
+        }
     }));
-}

@@ -5,7 +5,6 @@ let axios = require('axios');
 let request = require('request');
 let got = require("got");
 let Config = require('../config');
-let Lang = Language.getString('unvoice');
 let wk = Config.WORKTYPE === 'public' ? false:true
 
 let descri = "converts site to pdf"

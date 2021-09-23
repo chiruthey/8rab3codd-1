@@ -5,18 +5,19 @@ let axios = require('axios');
 let request = require('request');
 let got = require("got");
 let Config = require('../config');
-let Language = require('../language');
 let Lang = Language.getString('unvoice');
 let wk = Config.WORKTYPE === 'public' ? false:true
 
-Alpha.addCommand({pattern: 'spdf ?(.*)', fromMe: wk, desc: Lang.SPDF_DESC }, (async (message, match) => {
+let descri = "converts site to pdf"
 
-    if (match[1] === '') return await message.sendMessage(Lang.SPDF_LINK);
+Alpha.addCommand({pattern: 'spdf ?(.*)', fromMe: wk, desc:descri }, (async (message, match) => {
 
-    var webimage = await axios.get(`https://api.html2pdf.app/v1/generate?url=${match[1]}&apiKey=begC4dFAup1b8LyRXxAfjetfqDg2uYx8PWmh9YJ59tTZXiUyh2Vs72HdYQB68vyc`, { responseType: 'arraybuffer' })
+    const link = match[1]
+    
+    if (!link) return await message.client.sendMessage(message.jid, '```Give me a link```',MessageType.text)
 
-    await message.sendMessage(Lang.SPDF_PROC);
+    var webimage = await axios.get(`https://api.html2pdf.app/v1/generate?url=${match[1]}&apiKey=CuW551mR9ZedARcBDM2DDLzY4tYEHL2IhVW7AnkdM1vq9gNq0CZRXjXnvMYDqQua`, { responseType: 'arraybuffer' })
 
-    await message.sendMessage(Buffer.from(webimage.data), MessageType.document, {mimetype: Mimetype.pdf, filename: 'WhatsAlexa-Site-To-PDF-Feature-Made-By-Toxic-Devil.pdf'})
+    await message.sendMessage(Buffer.from(webimage.data), MessageType.document, {mimetype: Mimetype.pdf, filename: 'Alpha.pdf'})
 
     }));  

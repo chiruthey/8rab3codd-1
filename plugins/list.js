@@ -12,7 +12,7 @@ var ggg = Buffer.from(clh.cd, 'base64')
 var ddd = ggg.toString('utf-8')
 
 
-Alpha.addCommand({pattern: 'btn', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+Alpha.addCommand({pattern: 'list', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
     const rows = [
         {title: 'Row 1', description: "Hello it's description 1", rowId:"rowid1"},
         {title: 'Row 2', description: "Hello it's description 2", rowId:"rowid2"}

@@ -15,7 +15,7 @@ let wk = Config.WORKTYPE = 'public' ? false:true
         let pp
         try { pp = await message.client.getProfilePicture(message.jid.includes('-') ? message.data.participant : message.jid ); } catch { pp = await message.client.getProfilePicture(); }
         var ov_time = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
-        var utch = new Date().toLocaleDateString(config.LANG, get_localized_date)
+        var utch = new Date().toLocaleDateString(get_localized_date)
         
         await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.sendMessage(message.jid, res.data, MessageType.image, { caption: Config.ALIVEMSG + '\n\n' + '```Time :' + ov_time + '```\n\n ```Date :' + utch + '```' , quoted: message.data }); });
     }));

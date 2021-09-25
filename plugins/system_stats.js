@@ -1,10 +1,3 @@
-/* Copyright (C) 2020 Yusuf Usta.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-WhatsAsena - Yusuf Usta
-Developer & Co-Founder - Phaticusthiccy
-*/
-
 const Asena = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const {spawnSync} = require('child_process');
@@ -24,7 +17,7 @@ let wk = Config.WORKTYPE = 'public' ? false:true
         var ov_time = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
         var utch = new Date().toLocaleDateString(config.LANG, get_localized_date)
         
-        await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.sendMessage(message.jid, res.data, MessageType.image, { caption: Config.ALIVEMSG\n\n + '```Time :' + ov_time + '```'\n\n '```Date :' + utch + '```' , quoted: message.data }); });
+        await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.sendMessage(message.jid, res.data, MessageType.image, { caption: Config.ALIVEMSG + '\n\n' + '```Time :' + ov_time + '```\n\n ```Date :' + utch + '```' , quoted: message.data }); });
     }));
 
     Asena.addCommand({pattern: 'sysd', fromMe: wk, desc: Lang.SYSD_DESC}, (async (message, match) => {

@@ -18,7 +18,7 @@ let wk = Config.WORKTYPE = 'public' ? false:true
         const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         var utch = new Date().toLocaleDateString(get_localized_date)
         
-        await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.sendMessage(message.jid, res.data, MessageType.image, { caption: Config.ALIVEMSG + '\n\n' + '```Time :' + ov_time + '```\n\n ```Date :' + utch + '```' , quoted: message.data }); });
+        await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.sendMessage(message.jid, res.data, MessageType.image, { caption: Config.ALIVEMSG + '\n\n' + '```⏱ Time :' + ov_time + '```\n\n ```📅 Date :' + utch + '```' , quoted: message.data }); });
     }));
 
     Asena.addCommand({pattern: 'sysd', fromMe: wk, desc: Lang.SYSD_DESC}, (async (message, match) => {

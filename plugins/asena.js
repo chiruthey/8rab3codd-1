@@ -81,7 +81,7 @@ let wk = Config.WORKTYPE === 'private' ? true:false
             );
       }
     }));
-
+/*
 Asena.addCommand({pattern: 'owner', fromMe: wk, desc: 'get Devoloper contact number', dontAddCommandList: true}, (async (message, match) => {
 
             const vcard = 'BEGIN:VCARD\n'
@@ -93,3 +93,4 @@ await message.client.sendMessage(message.jid, {displayname: 'Alpha sir' , vcard:
 
   }));
 
+*/

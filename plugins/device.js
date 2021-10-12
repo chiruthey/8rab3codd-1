@@ -58,7 +58,7 @@ else if (Config.WORKTYPE == 'public') {
 
         var respoimage = await axios.get(alpha_img , { responseType: 'arraybuffer' })
 
-        await message.client.sendMessage(message.jid, Buffer(respoimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: msg })
+        await message.client.sendMessage(message.jid, Buffer(respoimage.data), MessageType.image, { caption: msg, quoted: message.data })
 
      });
     }

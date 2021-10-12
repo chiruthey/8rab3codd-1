@@ -1,4 +1,4 @@
-const Julie = require('../events');
+const Alpha = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const axios = require ('axios')
 const LOAD_ING = "*Searching details*"
@@ -8,7 +8,7 @@ const Language = require('../language');
 const Lang = Language.getString('scrapers');
 
 if (Config.WORKTYPE == 'private') {
-Julie.addCommand({pattern: 'device ?(.*)', fromMe: true, desc: Lang.DEVICE , dontAddCommandList: true }, async (message, match) => {
+Alpha.addCommand({pattern: 'device ?(.*)', fromMe: true, desc: Lang.DEVICE , dontAddCommandList: true }, async (message, match) => {
     
 const {data} = await axios(`https://zenzapi.xyz/api/gsmarena?query=${match[1]}&apikey=a9a05974d30e`)
 const { status, result } = data
@@ -33,7 +33,7 @@ msg += '```'
 });
 }
 else if (Config.WORKTYPE == 'public') {
-    Julie.addCommand({pattern: 'device ?(.*)', fromMe: false, desc: Lang.DEVICE , dontAddCommandList: true }, async (message, match) => {
+    Alpha.addCommand({pattern: 'device ?(.*)', fromMe: false, desc: Lang.DEVICE , dontAddCommandList: true }, async (message, match) => {
     
         const {data} = await axios(`https://zenzapi.xyz/api/gsmarena?query=${match[1]}&apikey=a9a05974d30e`)
         const { status, result } = data
@@ -54,8 +54,11 @@ else if (Config.WORKTYPE == 'public') {
         msg += `PIC            :${result.thumb}\n\n`
         msg += `BATTERY BRAND  :${result.pixel}\n\n`
         msg += '```'
-        var buffer = await axios.get(thumb, {responseType: 'arraybuffer'});
-        return await message.client.sendMessage(message.jid, Buffer.from(buffer.data), MessageType.image, {caption: msg , quoted: message.data });
-        //return await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
-        });
+        let alpha_img = result.thumb;
+
+        var respoimage = await axios.get(alpha_img , { responseType: 'arraybuffer' })
+
+        await message.client.sendMessage(message.jid, Buffer(respoimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: msg })
+
+     });
     }

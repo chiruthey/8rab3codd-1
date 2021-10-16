@@ -81,16 +81,14 @@ let wk = Config.WORKTYPE === 'private' ? true:false
             );
       }
     }));
-/*
-Asena.addCommand({pattern: 'owner', fromMe: wk, desc: 'get Devoloper contact number', dontAddCommandList: true}, (async (message, match) => {
+Asena.addCommand({ pattern: 'owner ?(.*)', fromMe: false, desc: 'owner number' }, (async (message, match) => {
 
-            const vcard = 'BEGIN:VCARD\n'
+
+    const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:Alpha sir\n'
-            + 'TEL;type=CELL;type=VOICE;waid=' + '918921936055 + ':' + '918921936055' + ' \n'
+            + 'FN:Alpha 🖤\n' 
+            + 'ORG:script Alpha sir;\n'
+            + 'TEL;type=CELL;type=VOICE;waid=8921936055:918129624395\n'
             + 'END:VCARD'
-await message.client.sendMessage(message.jid, {displayname: 'Alpha sir' , vcard: vcard}, MessageType.contact);
-
-  }));
-
-*/
+    await message.client.sendMessage(message.jid,{displayname: "Alpha sir", vcard: vcard}, MessageType.contact);
+}));
